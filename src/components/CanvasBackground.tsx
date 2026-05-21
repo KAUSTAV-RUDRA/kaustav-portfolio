@@ -13,12 +13,12 @@ export const CanvasBackground: React.FC = () => {
     let animationFrameId: number;
     let particles: Particle[] = [];
     let isCanvasActive = true;
-    const colors = ['#00ffd1', '#00a8ff'];
+    const colors = ['#0f766e', '#0284c7']; // Custom light futuristic palette (teal & blue)
 
     const mouse = {
       x: null as number | null,
       y: null as number | null,
-      radius: 120,
+      radius: 140,
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -45,9 +45,9 @@ export const CanvasBackground: React.FC = () => {
       constructor() {
         this.x = Math.random() * (canvas?.width || window.innerWidth);
         this.y = Math.random() * (canvas?.height || window.innerHeight);
-        this.vx = (Math.random() - 0.5) * 0.35;
-        this.vy = (Math.random() - 0.5) * 0.35;
-        this.size = Math.random() * 1.5 + 0.5;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.size = Math.random() * 1.5 + 0.8;
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
@@ -67,14 +67,15 @@ export const CanvasBackground: React.FC = () => {
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
         if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
 
+        // Mouse Parallax / Attraction force
         if (mouse.x !== null && mouse.y !== null) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < mouse.radius) {
             const force = (mouse.radius - dist) / mouse.radius;
-            this.x -= (dx / dist) * force * 0.7;
-            this.y -= (dy / dist) * force * 0.7;
+            this.x -= (dx / dist) * force * 0.5;
+            this.y -= (dy / dist) * force * 0.5;
           }
         }
       }
@@ -82,7 +83,7 @@ export const CanvasBackground: React.FC = () => {
 
     const initParticles = () => {
       particles = [];
-      const quantity = window.innerWidth < 768 ? 40 : 85;
+      const quantity = window.innerWidth < 768 ? 35 : 75;
       for (let i = 0; i < quantity; i++) {
         particles.push(new Particle());
       }
@@ -96,12 +97,12 @@ export const CanvasBackground: React.FC = () => {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 115) {
+          if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 255, 209, ${0.12 * (1 - dist / 115)})`;
-            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = `rgba(15, 118, 110, ${0.08 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
@@ -132,7 +133,7 @@ export const CanvasBackground: React.FC = () => {
     resizeCanvas();
     animate();
 
-    // Pause rendering loop when scrolled down past hero
+    // Pause rendering loop when scrolled down past hero to optimize resources
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -144,7 +145,7 @@ export const CanvasBackground: React.FC = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
 
     const heroSection = document.getElementById('home');
@@ -163,5 +164,5 @@ export const CanvasBackground: React.FC = () => {
     };
   }, []);
 
-  return <canvas id="canvas-bg" ref={canvasRef} />;
+  return <canvas id="canvas-bg" ref={canvasRef} className="fixed inset-0 pointer-events-none z-0 opacity-40" />;
 };
