@@ -4,7 +4,7 @@ export const Achievements: React.FC = () => {
   return (
     <section id="achievements">
       <div className="container">
-        <div className="section-label">02 // RECOGNITIONS</div>
+        <div className="section-label">02 // HACKATHONS</div>
         <h2 className="section-title">Hackathons & Milestones</h2>
 
         <div className="achievements-timeline">

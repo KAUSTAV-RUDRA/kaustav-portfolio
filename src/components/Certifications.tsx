@@ -32,7 +32,7 @@ export const Certifications: React.FC = () => {
   return (
     <section id="certifications">
       <div className="container">
-        <div className="section-label">05 // VERIFICATION</div>
+        <div className="section-label">05 // CERTIFICATIONS</div>
         <h2 className="section-title">Certifications</h2>
 
         <div className="cert-grid">

@@ -54,7 +54,7 @@ export const Skills: React.FC = () => {
   return (
     <section id="skills">
       <div className="container">
-        <div className="section-label">04 // TECHNICAL METRICS</div>
+        <div className="section-label">04 // TECH STACK</div>
         <h2 className="section-title">Core Skills</h2>
 
         <div className="skills-grid">

@@ -48,7 +48,7 @@ export const Projects: React.FC = () => {
   return (
     <section id="projects">
       <div className="container">
-        <div className="section-label">03 // SELECTED WORK</div>
+        <div className="section-label">03 // PROJECTS</div>
         <h2 className="section-title">Featured Projects</h2>
 
         <div className="projects-grid">

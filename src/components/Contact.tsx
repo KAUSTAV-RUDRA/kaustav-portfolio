@@ -4,16 +4,16 @@ export const Contact: React.FC = () => {
   return (
     <section id="contact">
       <div className="container">
-        <div className="section-label">06 // CONNECTION</div>
+        <div className="section-label">06 // CONTACT</div>
         <h2 className="section-title">Get In Touch</h2>
 
         <div className="contact-container">
           {/* Details */}
           <div className="contact-details reveal-item">
             <div className="contact-cta">
-              Have a problem worth solving?
+              Want to collaborate or have a question?
               <br />
-              Let's build together.
+              Let's connect.
             </div>
 
             <div className="contact-list">

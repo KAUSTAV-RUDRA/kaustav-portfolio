@@ -52,7 +52,7 @@ export const About: React.FC = () => {
   return (
     <section id="about">
       <div className="container">
-        <div className="section-label">01 // OVERVIEW</div>
+        <div className="section-label">01 // ABOUT ME</div>
         <h2 className="section-title">About Me</h2>
         
         <div className="about-grid">
