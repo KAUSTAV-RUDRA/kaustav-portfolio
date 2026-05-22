@@ -14,7 +14,7 @@ export const Certifications: React.FC = () => {
     {
       name: 'MongoDB Certified Associate Developer',
       issuer: 'MongoDB Inc.',
-      date: 'Jan 2025',
+      date: 'Jan 2024',
       verifyUrl: 'https://mongodb.com'
     },
     {
@@ -26,7 +26,7 @@ export const Certifications: React.FC = () => {
     {
       name: 'Salesforce Certified AI Associate',
       issuer: 'Salesforce',
-      date: 'Dec 2025',
+      date: 'Dec 2024',
       verifyUrl: 'https://salesforce.com'
     },
     {

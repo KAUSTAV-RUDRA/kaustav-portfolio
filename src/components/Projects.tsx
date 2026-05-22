@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Award, FileText, CheckCircle2 } from 'lucide-react';
+import { X, Award, CheckCircle2, ShieldAlert, Video, Lock, Sprout, Database } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Project {
@@ -13,6 +13,7 @@ interface Project {
   impact: string;
   github: string;
   live: string;
+  badge?: string;
   visualMockup: React.ReactNode;
 }
 
@@ -21,143 +22,209 @@ export const Projects: React.FC = () => {
 
   const projectsList: Project[] = [
     {
-      id: 'smart-interview',
-      title: 'Smart Interview Platform',
-      category: 'AI & Full Stack',
-      shortDesc: 'AI-driven candidate assessment system analyzing communication skill parameters and technical responses in real-time.',
-      longDesc: 'Engineered a comprehensive automated evaluation system that evaluates video resumes and audio responses. It leverages deep learning architectures to compute facial expression signals, text sentiment parameters, and verbal fluency rates, compiling a unified dashboard of metrics for recruiters.',
+      id: 'safechild-ai',
+      title: 'SafeChild AI — HappyChild AI Guardian',
+      category: 'Multimodal AI / NLP / CV',
+      shortDesc: 'A multimodal child protection app utilizing text classification, speech analysis, and image scans to detect exploitation.',
+      longDesc: 'Built at the NextGen Hackathon 2025 (ranking in the Top 0.6% among 3,900+ teams). This platform monitors online activity using Natural Language Processing (NLP) text classification algorithms to flag predatory patterns, speech-to-text audio transcript analysis, and computer vision image scanners to secure digital environments for children.',
       features: [
-        'Real-time Speech-to-Text transcription with NLP parsing.',
-        'Facial expression vector analysis with OpenCV and neural weights.',
-        'Fluency scoring engine monitoring pauses and speed deviations.',
-        'Full MERN database pipeline storing recruiter metrics and candidate logs.'
+        'Advanced NLP text classification targeting online grooming and predatory behaviors.',
+        'Audio speech-to-text pipeline parsing verbal conversations for threat analysis.',
+        'Computer vision image scanners classifying and filtering explicit or age-restricted content.',
+        'High-performance warning triggers sending immediate reports to parent dashboards.'
       ],
-      tech: ['React', 'Node.js', 'MongoDB', 'OpenCV', 'TensorFlow', 'WebSockets'],
-      impact: 'Reduces HR pre-screening durations by 60% with standardized analytics.',
-      github: 'https://github.com/KAUSTAV-RUDRA',
+      tech: ['Python', 'NLP', 'Speech-to-Text', 'Computer Vision', 'Multimodal AI'],
+      impact: '🏆 Hackathon Winner — ranked Top 0.6% globally among 3,900+ competing teams.',
+      github: 'https://github.com/KAUSTAV-RUDRA/HappyChild-AI-Guardian',
+      live: '#',
+      badge: '🏆 Top 0.6% Finalist',
+      visualMockup: (
+        <div className="w-full h-full bg-slate-950 font-mono text-[9px] p-4 text-emerald-400 select-none flex flex-col justify-between relative">
+          <div className="absolute top-2 right-2 bg-teal-500/20 border border-teal-500/30 px-2 py-0.5 rounded text-[8px] text-teal-400 font-bold uppercase tracking-wider flex items-center gap-1">
+            <Award className="w-2.5 h-2.5" /> NextGen
+          </div>
+          <div className="flex justify-between border-b border-slate-900 pb-1.5 text-slate-500">
+            <span className="flex items-center gap-1"><ShieldAlert className="w-3.5 h-3.5 text-rose-500" /> [SAFECHILD_DAEMON]</span>
+            <span className="text-emerald-500 animate-pulse">● SECURED</span>
+          </div>
+          <div className="space-y-1 my-2 grow">
+            <p className="text-slate-400">&gt; NLP: groom_prob &lt; 0.02 [Safe]</p>
+            <p className="text-sky-400">&gt; CV Image Scan: 0 flags detected</p>
+            <p className="text-emerald-400">&gt; Voice Pipeline: Active & listening</p>
+          </div>
+          <div className="bg-slate-900 border border-slate-800 px-2 py-1 rounded text-center text-[9px] text-teal-300 font-bold">
+            THREAT_INDEX: 0.00 / 10.00
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'smart-interview',
+      title: 'Smart Interview — AI Mock Platform',
+      category: 'AI / NLP / Full-Stack',
+      shortDesc: 'End-to-end candidate assessment platform generating skill-based questions and performance analytics in real-time.',
+      longDesc: 'Developed a comprehensive AI-driven interview simulation interface supporting 10+ skill domains. The engine generates tailored questions utilizing TF-IDF and graph-based NLP algorithms, maps candidates to adaptive routing schedules, and renders real-time performance analytics through a customized machine learning inference dashboard.',
+      features: [
+        'Adaptive interview questionnaire generator powered by graph-based NLP pipelines.',
+        'Automatic routing adjusting question difficulties to candidate skill profiles.',
+        'Real-time metrics tracking speech fluency, vocabulary, and answer precision.',
+        'Fully-responsive recruiter console storing detailed histories and candidate logs.'
+      ],
+      tech: ['Python', 'Flask', 'Scikit-learn', 'NLP', 'SQLite', 'JavaScript'],
+      impact: 'Slashes pre-screening review queues with automated evaluation reports.',
+      github: 'https://github.com/KAUSTAV-RUDRA/smartinterview',
       live: '#',
       visualMockup: (
         <div className="w-full h-full bg-slate-900 font-mono text-[9px] p-4 text-teal-400 select-none flex flex-col justify-between">
-          <div className="flex justify-between border-b border-slate-800 pb-1.5 text-slate-500">
-            <span>[EVALUATOR_SERVICE]</span>
-            <span className="text-emerald-500 animate-pulse">● LOGGED IN</span>
+          <div className="flex justify-between border-b border-slate-850 pb-1.5 text-slate-500">
+            <span className="flex items-center gap-1"><Video className="w-3.5 h-3.5 text-teal-600" /> [INTERVIEW_ENGINE]</span>
+            <span className="text-sky-400">SESSION: ACTIVE</span>
           </div>
           <div className="space-y-1 my-2 grow">
-            <p className="text-slate-400">&gt; analyzing candidate_stream_01.mp4</p>
-            <p className="text-sky-400">&gt; FPS: 29.8 | TEXT_ACCURACY: 98.4%</p>
-            <p className="text-teal-400">&gt; EMOTION_PROB: [Happy: 0.85, Neutral: 0.12]</p>
-            <p className="text-yellow-500">&gt; FLUENCY_SCORE: 8.9 / 10.0</p>
+            <p className="text-slate-400">&gt; routing candidate to MERN domain</p>
+            <p className="text-teal-400">&gt; NLP Graph: question_8 generated</p>
+            <p className="text-yellow-500">&gt; ML inference latency: 32ms</p>
           </div>
-          <div className="bg-slate-800/80 px-2 py-1 rounded text-center text-[10px] text-white">
-            COMPILING REPORT... 88%
-          </div>
-        </div>
-      )
-    },
-    {
-      id: 'doc-summarizer',
-      title: 'Multi Document Summarizer',
-      category: 'NLP & Deep Learning',
-      shortDesc: 'Intelligent transformer pipeline digesting multiple academic PDFs and compiling unified comparative brief files.',
-      longDesc: 'Developed a system that processes multiple large document attachments, groups overlapping text arguments via matrix factorizations, and passes core content structures into a custom fine-tuned transformer language model to create condensed, cross-referenced executive digests.',
-      features: [
-        'Simultaneous PDF parser parsing text coordinates and references.',
-        'Lexical cosine vector comparison to filter duplicate records.',
-        'HuggingFace Transformer endpoint yielding extractive abstracts.',
-        'Downloadable Markdown brief files containing source attribution.'
-      ],
-      tech: ['Python', 'FastAPI', 'PyTorch', 'Transformers', 'Docker', 'React'],
-      impact: 'Processes up to 5 parallel 100-page papers in less than 35 seconds.',
-      github: 'https://github.com/KAUSTAV-RUDRA',
-      live: '#',
-      visualMockup: (
-        <div className="w-full h-full bg-slate-800 p-4 select-none flex flex-col justify-between">
-          <div className="flex gap-2 items-center text-xs border-b border-slate-700 pb-2">
-            <FileText className="w-4 h-4 text-teal-500" />
-            <span className="text-slate-200 font-mono">summary_draft.md</span>
-          </div>
-          <div className="my-2 space-y-1.5 grow font-mono text-[9px] text-slate-300">
-            <p className="font-bold text-teal-400"># Executive Abstract</p>
-            <p className="line-clamp-2">This paper outlines neural connections utilizing gradient descent weights across dense layer networks...</p>
-            <div className="flex gap-1.5 flex-wrap">
-              <span className="bg-teal-900/40 text-teal-300 text-[8px] px-1.5 py-0.5 rounded font-mono">Accuracy: 95.8%</span>
-              <span className="bg-sky-900/40 text-sky-300 text-[8px] px-1.5 py-0.5 rounded font-mono">Tokens: 4.2k</span>
-            </div>
-          </div>
-          <div className="bg-teal-600 text-white font-mono text-[10px] py-1 rounded text-center font-bold">
-            DOWNLOAD REPORT
+          <div className="bg-teal-950/60 border border-teal-500/20 px-2 py-1 rounded text-center text-[9px] text-teal-300 font-bold">
+            EVAL_SCORE: 8.9 / 10.0
           </div>
         </div>
       )
     },
     {
-      id: 'rice-grain',
-      title: 'Rice Type Quality Classifier',
-      category: 'Computer Vision & DL',
-      shortDesc: 'Edge-optimized CNN classifier cataloging grain varieties and detecting broken percentage parameters.',
-      longDesc: 'Designed and trained custom Convolutional Neural Networks (CNNs) using PyTorch and OpenCV. The system ingests high-resolution images of grain trays, localizes individual rice kernels, classifies their cultivars, and evaluates grain damage ratios for industrial grading.',
+      id: 'rice-classifier',
+      title: 'Rice Grain Classifier',
+      category: 'Computer Vision / DL',
+      shortDesc: 'Deep learning system classifying 5 rice grain varieties and detecting damage parameters with 94% accuracy.',
+      longDesc: 'Led a student development team to design, benchmark, and deploy a computer vision classifier cataloging 5 distinct varieties of commercial rice grains with a validation score of 94%. Compared custom Convolutional Neural Networks (CNN) models against pre-trained VGG-16 networks, utilizing custom-designed image data augmentation pipelines to optimize low-lighting performance.',
       features: [
-        'Image processing pipeline adjusting shadows and contour gradients.',
-        'Custom PyTorch CNN yielding 98.6% categorization score.',
-        'Broken grain detection tracking bounding box area ratios.',
-        'Fast REST API endpoint deployed on lightweight containers.'
+        'Relies on custom image data augmentation pipelines stabilizing edge predictions.',
+        'Contour segmentation localizing individual grains to extract size/area ratios.',
+        'Comparative benchmark analysis analyzing custom CNN vs. transfer learning on VGG-16.',
+        'Structured team leadership managing code reviews, workflows, and task tracking.'
       ],
-      tech: ['PyTorch', 'OpenCV', 'FastAPI', 'NumPy', 'Docker', 'TailwindCSS'],
-      impact: 'Yields 98.6% classification accuracy under varying lighting levels.',
+      tech: ['Python', 'TensorFlow', 'Keras', 'CNN', 'VGG-16', 'OpenCV'],
+      impact: 'Yielded 94% classification accuracy across all test cultivars.',
       github: 'https://github.com/KAUSTAV-RUDRA',
       live: '#',
+      badge: '👥 Team Lead',
       visualMockup: (
-        <div className="w-full h-full bg-slate-950 relative overflow-hidden select-none">
-          {/* Simulated grain tray grids with boxes */}
-          <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 p-2 gap-2">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="border border-teal-500/50 bg-teal-500/5 rounded flex flex-col justify-between p-1">
-                <span className="text-[8px] font-mono text-teal-400">K_{i} [OK]</span>
-                <span className="text-[7px] font-mono text-slate-400 text-right">99.1%</span>
+        <div className="w-full h-full bg-slate-950 relative overflow-hidden select-none p-2 flex flex-col justify-between">
+          <div className="grid grid-cols-4 gap-1 grow">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="border border-teal-500/40 bg-teal-500/5 rounded flex flex-col justify-between p-1 items-center">
+                <div className="w-2.5 h-6 rounded-full bg-slate-100/40 border border-teal-300/40 rotate-12 mt-1"></div>
+                <span className="text-[7px] font-mono text-teal-400">G_{i} [OK]</span>
               </div>
             ))}
           </div>
-          <div className="absolute bottom-2 left-2 right-2 bg-slate-900/90 border border-slate-700/50 rounded p-1 text-[8px] font-mono text-white text-center">
-            VAL_ACC: <span className="text-emerald-400 font-bold">98.6%</span> | RATIO: Basmati
+          <div className="bg-slate-900 border border-slate-800 rounded p-1 text-[8px] font-mono text-white text-center mt-1 flex justify-between px-2">
+            <span>MODEL: VGG-16</span>
+            <span className="text-emerald-400 font-bold">ACCURACY: 94.2%</span>
           </div>
         </div>
       )
     },
     {
-      id: 'uber-mern',
-      title: 'Uber-style MERN Platform',
-      category: 'Full Stack Web',
-      shortDesc: 'Real-time passenger navigation tracking system with socket integrations and geospatial queries.',
-      longDesc: 'Built a multi-user transport dispatcher featuring reactive client maps, driver matching systems, and path optimization. Implemented high-performance geospatial indices in MongoDB and socket connections for immediate state tracking between passenger requests and driver routes.',
+      id: 'fileshare',
+      title: 'File Sharing Application',
+      category: 'Full-Stack Web',
+      shortDesc: 'Secure file-sharing platform implementing role-based access control, file encryption, and access logs.',
+      longDesc: 'Designed and implemented a secure file-sharing web application enabling safe, collaborative file exchange. Crafted with Python and Flask, it features robust Role-Based Access Control (RBAC) schemas, end-to-end file encryption modules, customized expiry settings for shared links, and detailed database logs tracking every access request.',
       features: [
-        'Geospatial MongoDB indexes (`$nearSphere`) querying coordinates.',
-        'Real-time socket.io integrations syncing driver trajectories.',
-        'Leaflet client-side maps tracking routes.',
-        'Secure JWT authorization with password hashing algorithms.'
+        'Role-Based Access Control (RBAC) restrictively filtering file directory layouts.',
+        'End-to-end file encryption and secure download verification pipelines.',
+        'Link expiry timers and access count caps to minimize exposure risks.',
+        'Secure password hashing via bcrypt and detailed audit trails on downloads.'
       ],
-      tech: ['MongoDB', 'Express', 'React', 'Node.js', 'Socket.io', 'Mapbox'],
-      impact: 'Manages passenger driver location notifications under 150ms socket latency.',
-      github: 'https://github.com/KAUSTAV-RUDRA',
+      tech: ['Python', 'Flask', 'HTML/CSS', 'JavaScript', 'SQLite', 'bcrypt'],
+      impact: 'Ensures zero-leak file sharing operations with auditable access logs.',
+      github: 'https://github.com/KAUSTAV-RUDRA/fileshare',
       live: '#',
       visualMockup: (
-        <div className="w-full h-full bg-slate-900 p-4 font-mono text-[9px] text-slate-300 select-none flex flex-col justify-between">
-          <div className="flex justify-between border-b border-slate-800 pb-1.5 text-slate-500">
-            <span>[MAPS_ENGINE]</span>
-            <span className="text-sky-500">LATENCY: 45ms</span>
+        <div className="w-full h-full bg-slate-900 font-mono text-[9px] p-4 text-sky-400 select-none flex flex-col justify-between">
+          <div className="flex justify-between border-b border-slate-850 pb-1.5 text-slate-500">
+            <span className="flex items-center gap-1"><Lock className="w-3.5 h-3.5 text-sky-500" /> [VAULT_SHARE]</span>
+            <span className="text-emerald-500">AES-256</span>
           </div>
-          <div className="my-2 space-y-1 grow relative">
-            {/* Draw schematic line path representing route */}
-            <div className="absolute top-1/2 left-2 right-2 h-0.5 bg-slate-800" />
-            <div className="absolute top-1/2 left-4 right-8 h-0.5 bg-teal-500" />
-            <div className="absolute top-1/2 left-4 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-teal-500" />
-            <div className="absolute top-1/2 right-8 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-sky-500 animate-ping" />
-            <div className="absolute top-1/2 right-8 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-sky-500" />
-            <div className="absolute bottom-1 left-2 text-[7px] text-slate-500">
-              POS_Passenger: [17.385, 78.486]
+          <div className="space-y-1 my-2 grow">
+            <p className="text-slate-400">&gt; user: analyst_team_1 authenticated</p>
+            <p className="text-sky-400">&gt; decrypting: credentials_audit.xlsx</p>
+            <p className="text-slate-500">&gt; Link Expiry: 1h 45m | Downloads: 1/3</p>
+          </div>
+          <div className="bg-sky-950/60 border border-sky-500/20 px-2 py-1 rounded text-center text-[9px] text-sky-300 font-bold">
+            FILE_TRANSFER_COMPLETE
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'virtual-gardening',
+      title: 'Virtual Gardening Assistant',
+      category: 'Full-Stack Web',
+      shortDesc: 'Interactive garden planning assistant delivering care schedules and plant recommendations.',
+      longDesc: 'Developed a responsive and interactive virtual gardening assistant. Designed to help users plan garden layouts, the app features customized plant recommendations based on local environment profiles, schedules care routines, and builds structured watering calendars.',
+      features: [
+        'Interactive layout system allowing visual mapping of garden grids.',
+        'Customized care schedulers tracking watering and pruning dates.',
+        'Environment-aware recommendations cataloging ideal garden varieties.',
+        'Lightweight, client-side data persistence for optimal performance.'
+      ],
+      tech: ['HTML', 'CSS', 'JavaScript'],
+      impact: 'Simplifies plant monitoring with a clean, responsive scheduler.',
+      github: 'https://github.com/KAUSTAV-RUDRA/VirtualGardeningAssistant',
+      live: '#',
+      visualMockup: (
+        <div className="w-full h-full bg-slate-900 font-mono text-[9px] p-4 text-emerald-400 select-none flex flex-col justify-between">
+          <div className="flex justify-between border-b border-slate-850 pb-1.5 text-slate-500">
+            <span className="flex items-center gap-1"><Sprout className="w-3.5 h-3.5 text-emerald-500" /> [GARDEN_SYSTEM]</span>
+            <span className="text-emerald-500">MONITOR_ON</span>
+          </div>
+          <div className="space-y-1.5 my-2 grow">
+            <div className="flex justify-between text-slate-400">
+              <span>- Tomato (Grid A1)</span>
+              <span className="text-emerald-400 font-bold">Watering OK</span>
+            </div>
+            <div className="flex justify-between text-slate-400">
+              <span>- Aloe Vera (Grid B3)</span>
+              <span className="text-yellow-500 font-bold">Water Due</span>
             </div>
           </div>
-          <div className="bg-slate-800 py-1.5 rounded text-center text-white text-[9px]">
-            MATCHED DRIVER: #D-8822 (ETA: 4 MIN)
+          <div className="bg-emerald-950/60 border border-emerald-500/20 px-2 py-1 rounded text-center text-[9px] text-emerald-300 font-bold">
+            NEXT REMINDER: 08:00 AM
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'django-project',
+      title: 'Django Project',
+      category: 'Backend Web',
+      shortDesc: 'Django application demonstrating MVT architecture, relational models, views, and template configurations.',
+      longDesc: 'Constructed a structured full-stack learning application implementing Django’s Model-View-Template (MVT) architecture. Designed relational schemas, created customized database views, and mapped template directories to showcase backend engineering best practices.',
+      features: [
+        'Robust Django MVT structure cleanly separation server layers.',
+        'Relational database schemas mapping models to backends.',
+        'Comprehensive CRUD operations handling dashboard objects.',
+        'Dynamic templating render data-driven views.'
+      ],
+      tech: ['Python', 'Django', 'HTML/CSS'],
+      impact: 'Demonstrates robust backend engineering structures and database queries.',
+      github: 'https://github.com/KAUSTAV-RUDRA/djangoproject',
+      live: '#',
+      visualMockup: (
+        <div className="w-full h-full bg-slate-950 font-mono text-[9px] p-4 text-indigo-400 select-none flex flex-col justify-between">
+          <div className="flex justify-between border-b border-slate-900 pb-1.5 text-slate-500">
+            <span className="flex items-center gap-1"><Database className="w-3.5 h-3.5 text-indigo-500" /> [DJANGO_SERVER]</span>
+            <span className="text-emerald-500">SYS_OK</span>
+          </div>
+          <div className="space-y-1 my-2 grow text-slate-400">
+            <p>&gt; python manage.py runserver</p>
+            <p className="text-indigo-400">&gt; DB Models: [Profile, Post, Log]</p>
+            <p className="text-slate-500">&gt; GET /api/v1/posts/ HTTP/2 200</p>
+          </div>
+          <div className="bg-slate-900 border border-slate-800 px-2 py-1 rounded text-center text-[9px] text-indigo-300 font-bold">
+            DATABASE_URL: sqlite:///db.sqlite3
           </div>
         </div>
       )
@@ -180,14 +247,14 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsList.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
               className="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow duration-300"
             >
               {/* Project Card Header Visual Mockup */}
@@ -199,7 +266,7 @@ export const Projects: React.FC = () => {
                     onClick={() => setSelectedProject(project)}
                     className="bg-white text-slate-800 font-mono text-xs font-semibold uppercase px-5 py-2.5 rounded-xl shadow-md transition-transform duration-200 hover:scale-105"
                   >
-                    View Architecture
+                    View Case Study
                   </button>
                 </div>
               </div>
@@ -211,9 +278,14 @@ export const Projects: React.FC = () => {
                     <span className="font-mono text-[10px] uppercase font-bold text-teal-600 tracking-wider">
                       {project.category}
                     </span>
+                    {project.badge && (
+                      <span className="font-mono text-[9px] font-bold bg-teal-50 text-teal-700 px-2 py-0.5 rounded border border-teal-200/20">
+                        {project.badge}
+                      </span>
+                    )}
                   </div>
                   
-                  <h3 className="font-display font-bold text-xl text-slate-800 mb-2 group-hover:text-teal-600 transition-colors">
+                  <h3 className="font-display font-bold text-lg text-slate-800 mb-2 group-hover:text-teal-600 transition-colors line-clamp-1">
                     {project.title}
                   </h3>
                   
@@ -327,7 +399,7 @@ export const Projects: React.FC = () => {
                   <div className="bg-teal-50 border border-teal-100 rounded-xl p-4 flex gap-3 items-start">
                     <Award className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-mono text-[10px] uppercase font-bold text-teal-800">Performance Impact</h4>
+                      <h4 className="font-mono text-[10px] uppercase font-bold text-teal-800">Performance Highlight / Impact</h4>
                       <p className="text-teal-900 text-xs mt-0.5 leading-relaxed font-semibold">
                         {selectedProject.impact}
                       </p>
@@ -367,7 +439,7 @@ export const Projects: React.FC = () => {
                     onClick={() => setSelectedProject(null)}
                     className="bg-slate-800 hover:bg-slate-900 text-white font-mono text-xs font-semibold px-5 py-2.5 rounded-xl transition-all"
                   >
-                    Close case study
+                    Close Case Study
                   </button>
                 </div>
               </motion.div>

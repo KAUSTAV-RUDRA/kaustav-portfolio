@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export const Hero: React.FC = () => {
   const roles = [
-    'AI Engineer',
-    'MERN Stack Developer',
-    'Deep Learning Enthusiast',
+    'Software Engineer',
+    'AI & Data Science Specialist',
+    'Deep Learning Developer',
     'Full Stack Developer'
   ];
   
@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
 
           {/* Brief Bio Intro */}
           <motion.p variants={itemVariants} className="text-slate-600 text-base md:text-lg max-w-xl font-sans leading-relaxed">
-            Final-year B.Tech engineering student combining deep learning analytics with MERN stack structures to engineer smart, robust, and accessible digital products.
+            JPMorgan Code for Good 2025 participant and Top 0.6% finalist (among 3,900+ teams) at NextGen Hackathon 2025. Final-year AI & Data Science engineer at KL University (CGPA: 9.33/10) with hands-on experience building NLP pipelines, computer vision models, and full-stack web applications end-to-end. Thrives in high-pressure environments and brings a systems mindset to every problem.
           </motion.p>
 
           {/* CTAs */}
@@ -105,11 +105,20 @@ export const Hero: React.FC = () => {
             </a>
 
             <a
-              href="#contact"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-mono text-sm px-6 py-3 rounded-xl transition-all hover:shadow-sm"
             >
               <FileText className="w-4 h-4 text-teal-600" />
-              <span>Get In Touch</span>
+              <span>Download Resume</span>
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 font-mono text-sm text-slate-600 hover:text-teal-600 transition-colors px-4 py-3"
+            >
+              <span>Get in Touch &rarr;</span>
             </a>
           </motion.div>
 
@@ -127,7 +136,7 @@ export const Hero: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/kaustavrudra/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-white hover:bg-teal-50 border border-slate-200 hover:border-teal-200 rounded-xl text-slate-600 hover:text-teal-600 transition-all hover:scale-105"
@@ -155,8 +164,15 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 rounded-[2.5rem] p-1.5 bg-gradient-to-tr from-teal-500 via-cyan-400 to-sky-500 shadow-lg shadow-teal-100/50">
               {/* Inner card containing custom futuristic AI vector / avatar */}
               <div className="w-full h-full bg-slate-900 rounded-[2.1rem] overflow-hidden flex items-center justify-center relative group">
+                {/* Real profile image from GitHub */}
+                <img 
+                  src="https://avatars.githubusercontent.com/u/182359004?v=4"
+                  alt="Kaustav Harinarayana Rudra"
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500"
+                />
+
                 {/* Custom glowing mesh network graphic to symbolize AI & Data Science */}
-                <svg className="absolute inset-0 w-full h-full opacity-35" viewBox="0 0 100 100">
+                <svg className="absolute inset-0 w-full h-full opacity-40 pointer-events-none z-10" viewBox="0 0 100 100">
                   <defs>
                     <linearGradient id="svg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#00ffd1" />
@@ -168,29 +184,22 @@ export const Hero: React.FC = () => {
                   <circle cx="50" cy="50" r="2.5" fill="url(#svg-grad)" />
                   <circle cx="30" cy="70" r="1.5" fill="url(#svg-grad)" />
                   <circle cx="70" cy="80" r="2" fill="url(#svg-grad)" />
-                  <line x1="20" y1="30" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.2)" strokeWidth="0.5" />
-                  <line x1="80" y1="20" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.2)" strokeWidth="0.5" />
-                  <line x1="30" y1="70" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.2)" strokeWidth="0.5" />
-                  <line x1="70" y1="80" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.2)" strokeWidth="0.5" />
-                  <line x1="20" y1="30" x2="30" y2="70" stroke="rgba(0, 255, 209, 0.2)" strokeWidth="0.5" />
-                  <line x1="80" y1="20" x2="70" y2="80" stroke="rgba(0, 255, 209, 0.2)" strokeWidth="0.5" />
+                  <line x1="20" y1="30" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.3)" strokeWidth="0.5" />
+                  <line x1="80" y1="20" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.3)" strokeWidth="0.5" />
+                  <line x1="30" y1="70" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.3)" strokeWidth="0.5" />
+                  <line x1="70" y1="80" x2="50" y2="50" stroke="rgba(0, 255, 209, 0.3)" strokeWidth="0.5" />
+                  <line x1="20" y1="30" x2="30" y2="70" stroke="rgba(0, 255, 209, 0.3)" strokeWidth="0.5" />
+                  <line x1="80" y1="20" x2="70" y2="80" stroke="rgba(0, 255, 209, 0.3)" strokeWidth="0.5" />
                 </svg>
 
-                {/* Styled Monogram in center */}
-                <div className="text-center z-10 p-4">
-                  <div className="font-mono text-5xl font-extrabold text-teal-400 select-none animate-bounce mb-2">
-                    &lt;AI/&gt;
-                  </div>
-                  <div className="font-mono text-xs text-slate-400 select-none uppercase tracking-widest font-bold">
-                    Kaustav H. Rudra
-                  </div>
-                  <div className="font-mono text-[9px] text-teal-300 mt-1 select-none opacity-85">
-                    MODEL_TRAINED = TRUE
-                  </div>
-                </div>
-
                 {/* Subtly moving overlay scanner lines */}
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-teal-400 to-transparent opacity-60 animate-[bounce_6s_infinite] pointer-events-none" />
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-teal-400 to-transparent opacity-60 animate-[bounce_6s_infinite] pointer-events-none z-20" />
+                
+                {/* Tech overlay text watermark */}
+                <div className="absolute bottom-4 left-4 right-4 bg-slate-950/80 backdrop-blur-sm border border-slate-800 px-3 py-1.5 rounded-xl font-mono text-[9px] text-teal-400 flex justify-between items-center z-25 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span>SYS_ACTIVE: TRUE</span>
+                  <span>MODEL_READY</span>
+                </div>
               </div>
             </div>
           </div>

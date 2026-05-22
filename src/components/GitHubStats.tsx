@@ -27,18 +27,44 @@ export const GitHubStats: React.FC = () => {
 
   const repos = [
     {
-      name: 'safechild-ai',
-      desc: 'AI tracking app optimizing safe route nodes and monitoring verbal parameters.',
-      stars: 12,
-      forks: 4,
-      lang: 'TypeScript'
+      name: 'HappyChild-AI-Guardian',
+      desc: 'A multimodal child protection app utilizing text classification, speech analysis, and computer vision image scanners.',
+      stars: 14,
+      forks: 3,
+      lang: 'Python',
+      url: 'https://github.com/KAUSTAV-RUDRA/HappyChild-AI-Guardian'
     },
     {
-      name: 'smart-evaluator-engine',
-      desc: 'Deep learning audio/video facial assessment APIs and HR evaluation systems.',
-      stars: 18,
-      forks: 7,
-      lang: 'Python'
+      name: 'smartinterview',
+      desc: 'AI-driven mock interview simulator supporting 10+ skill domains with automated evaluation reports and graph-based NLP.',
+      stars: 19,
+      forks: 5,
+      lang: 'Python',
+      url: 'https://github.com/KAUSTAV-RUDRA/smartinterview'
+    },
+    {
+      name: 'fileshare',
+      desc: 'Secure file-sharing application with Flask backend, SQLite, Role-Based Access Control, and bcrypt file encryption.',
+      stars: 8,
+      forks: 2,
+      lang: 'Python',
+      url: 'https://github.com/KAUSTAV-RUDRA/fileshare'
+    },
+    {
+      name: 'VirtualGardeningAssistant',
+      desc: 'A responsive virtual gardening assistant and educational tool built using frontend technologies HTML, CSS, and JavaScript.',
+      stars: 6,
+      forks: 1,
+      lang: 'JavaScript',
+      url: 'https://github.com/KAUSTAV-RUDRA/VirtualGardeningAssistant'
+    },
+    {
+      name: 'djangoproject',
+      desc: 'Custom built Django web application structuring modular backend patterns and secure user session management.',
+      stars: 7,
+      forks: 2,
+      lang: 'Python',
+      url: 'https://github.com/KAUSTAV-RUDRA/djangoproject'
     }
   ];
 
@@ -66,9 +92,14 @@ export const GitHubStats: React.FC = () => {
                 <Calendar className="w-5 h-5 text-teal-600" />
                 Contributions (Past 6 Months)
               </h3>
-              <span className="font-mono text-[10px] uppercase font-bold text-slate-400">
+              <a 
+                href="https://github.com/KAUSTAV-RUDRA" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-mono text-[10px] uppercase font-bold text-slate-400 hover:text-teal-600 transition-colors"
+              >
                 @KAUSTAV-RUDRA
-              </span>
+              </a>
             </div>
 
             {/* Grid Box */}
@@ -160,9 +191,14 @@ export const GitHubStats: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <GitPullRequest className="w-4 h-4 text-teal-600" />
-                  <h4 className="font-mono text-sm font-bold text-slate-800 hover:text-teal-600 cursor-pointer">
+                  <a
+                    href={repo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-sm font-bold text-slate-800 hover:text-teal-600 transition-colors"
+                  >
                     {repo.name}
-                  </h4>
+                  </a>
                 </div>
                 <p className="text-slate-500 text-xs md:text-sm leading-relaxed">
                   {repo.desc}

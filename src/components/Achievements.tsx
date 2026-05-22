@@ -1,9 +1,23 @@
 import React from 'react';
-import { Trophy, Code2, Award, BookOpen } from 'lucide-react';
+import { Trophy, Code2, Award, BookOpen, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+interface MilestoneLink {
+  label: string;
+  url: string;
+}
+
+interface Milestone {
+  title: string;
+  subtitle: string;
+  date: string;
+  icon: React.ReactNode;
+  bullets: string[];
+  links?: MilestoneLink[];
+}
+
 export const Achievements: React.FC = () => {
-  const milestones = [
+  const milestones: Milestone[] = [
     {
       title: 'JPMorgan Code for Good Hackathon',
       subtitle: 'Collaborative NGO Prototype Development',
@@ -16,31 +30,35 @@ export const Achievements: React.FC = () => {
       ]
     },
     {
-      title: 'NextGen Hackathon Winner',
-      subtitle: 'Outstanding AI Prototype Award',
+      title: 'NextGen Hackathon 2025',
+      subtitle: 'Top 0.6% Finalist (Among 3,900+ Teams)',
       date: '2025',
       icon: <Award className="w-5 h-5 text-teal-600" />,
       bullets: [
         'Led a 3-member team to design and deploy an image-based cultivar classification prototype.',
         'Engineered light, optimized convolutional networks running at fast edge speeds.',
-        'Awarded first place in the AI & Data Science vertical for prototype viability.'
+        'Recognized in the top 0.6% of submissions nationally for technical innovation and prototype viability.'
       ]
     },
     {
       title: 'Competitive Coding Achievements',
-      subtitle: 'LeetCode & Hackerrank Benchmarks',
+      subtitle: 'LeetCode & CodeChef Benchmarks',
       date: 'Active',
       icon: <Code2 className="w-5 h-5 text-sky-600" />,
       bullets: [
-        'Solved 450+ algorithmic challenges on LeetCode with focusing on Dynamic Programming and Graphs.',
-        'Maintained a top 8% profile ranking in weekly competition metrics.',
+        'Solved 450+ algorithmic challenges on LeetCode focusing on Dynamic Programming, Graphs, and Data Structures.',
+        'Maintained a top 8% profile ranking in weekly competition metrics on LeetCode.',
         'Earned golden badges in Python, Problem Solving, and Database systems on HackerRank.'
+      ],
+      links: [
+        { label: 'LeetCode Profile', url: 'https://leetcode.com/kaustavrudra' },
+        { label: 'CodeChef Profile', url: 'https://www.codechef.com/users/kaustavrudra' }
       ]
     },
     {
       title: 'Academic Excellence Honors',
       subtitle: 'B.Tech AI & Data Science Class Honors',
-      date: '2022 - Present',
+      date: '2023 - Present',
       icon: <BookOpen className="w-5 h-5 text-teal-600" />,
       bullets: [
         'Maintained a CGPA of 9.33 / 10.0, placing in the top 5% of the engineering class.',
@@ -105,6 +123,23 @@ export const Achievements: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+
+                {item.links && (
+                  <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-slate-100">
+                    {item.links.map((link, lIdx) => (
+                      <a
+                        key={lIdx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-teal-600 hover:text-teal-700 bg-teal-50/50 hover:bg-teal-50 border border-teal-200/40 px-3 py-1.5 rounded-lg transition-all duration-200"
+                      >
+                        {link.label}
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

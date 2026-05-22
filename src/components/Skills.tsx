@@ -1,74 +1,53 @@
 import React from 'react';
-import { Code2, Server, Cpu, Database, Layers, CheckCircle } from 'lucide-react';
+import { Code2, Server, Cpu, Database, Layers, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Skills: React.FC = () => {
   const skillCategories = [
     {
-      title: 'Frontend Development',
-      icon: <Code2 className="w-5 h-5 text-teal-600" />,
+      title: 'AI & Machine Learning',
+      icon: <Cpu className="w-5 h-5 text-teal-600" />,
       colorClass: 'from-teal-500/20 to-cyan-500/20',
-      borderClass: 'group-hover:border-teal-400',
       shadowClass: 'hover:shadow-teal-100/50',
       skills: [
-        { name: 'React.js', level: 'Advanced' },
-        { name: 'TypeScript', level: 'Intermediate' },
-        { name: 'TailwindCSS', level: 'Advanced' },
-        { name: 'HTML5 & CSS3', level: 'Advanced' }
+        'TensorFlow', 'Keras', 'Scikit-learn', 'OpenCV', 'spaCy',
+        'CNN', 'VGG-16', 'NLP', 'Multimodal AI', 'Generative AI'
       ]
     },
     {
-      title: 'Backend Engineering',
-      icon: <Server className="w-5 h-5 text-sky-600" />,
+      title: 'Languages',
+      icon: <Code2 className="w-5 h-5 text-sky-600" />,
       colorClass: 'from-sky-500/20 to-blue-500/20',
-      borderClass: 'group-hover:border-sky-400',
       shadowClass: 'hover:shadow-sky-100/50',
-      skills: [
-        { name: 'Node.js', level: 'Advanced' },
-        { name: 'Express.js', level: 'Advanced' },
-        { name: 'Django (Python)', level: 'Intermediate' },
-        { name: 'REST APIs', level: 'Advanced' }
-      ]
+      skills: ['Python', 'Java', 'C', 'JavaScript', 'HTML/CSS']
     },
     {
-      title: 'AI & Deep Learning',
-      icon: <Cpu className="w-5 h-5 text-emerald-600" />,
+      title: 'Frameworks & Libraries',
+      icon: <Layers className="w-5 h-5 text-emerald-600" />,
       colorClass: 'from-emerald-500/20 to-teal-500/20',
-      borderClass: 'group-hover:border-emerald-400',
       shadowClass: 'hover:shadow-emerald-100/50',
-      skills: [
-        { name: 'TensorFlow', level: 'Intermediate' },
-        { name: 'PyTorch', level: 'Intermediate' },
-        { name: 'Deep CNNs', level: 'Advanced' },
-        { name: 'OpenCV (Vision)', level: 'Advanced' },
-        { name: 'NLP & Pandas', level: 'Intermediate' }
-      ]
+      skills: ['Django', 'Flask', 'ReactJS', 'Spring Boot', 'Bootstrap']
     },
     {
       title: 'Database Systems',
       icon: <Database className="w-5 h-5 text-indigo-600" />,
       colorClass: 'from-indigo-500/20 to-blue-500/20',
-      borderClass: 'group-hover:border-indigo-400',
       shadowClass: 'hover:shadow-indigo-100/50',
-      skills: [
-        { name: 'MongoDB', level: 'Advanced' },
-        { name: 'PostgreSQL', level: 'Intermediate' },
-        { name: 'SQLite', level: 'Advanced' },
-        { name: 'Firebase', level: 'Intermediate' }
-      ]
+      skills: ['MySQL', 'SQLite']
     },
     {
-      title: 'Cloud & DevOps',
-      icon: <Layers className="w-5 h-5 text-blue-600" />,
+      title: 'Dev Tools & Analytics',
+      icon: <Server className="w-5 h-5 text-blue-600" />,
       colorClass: 'from-blue-500/20 to-purple-500/20',
-      borderClass: 'group-hover:border-blue-400',
       shadowClass: 'hover:shadow-blue-100/50',
-      skills: [
-        { name: 'AWS (S3/EC2)', level: 'Intermediate' },
-        { name: 'Git & GitHub', level: 'Advanced' },
-        { name: 'Docker', level: 'Basic' },
-        { name: 'GitHub Actions', level: 'Basic' }
-      ]
+      skills: ['Git', 'VS Code', 'PyCharm', 'Jupyter Notebook', 'Power BI']
+    },
+    {
+      title: 'Coding Platforms',
+      icon: <Trophy className="w-5 h-5 text-purple-600" />,
+      colorClass: 'from-purple-500/20 to-pink-500/20',
+      shadowClass: 'hover:shadow-purple-100/50',
+      skills: ['CodeChef', 'LeetCode', 'Codeforces', 'HackerRank']
     }
   ];
 
@@ -122,22 +101,14 @@ export const Skills: React.FC = () => {
               </div>
 
               {/* Tag Cloud */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, sIdx) => (
-                  <div 
+                  <span 
                     key={sIdx}
-                    className="flex justify-between items-center bg-white border border-slate-200/50 px-4 py-2.5 rounded-xl hover:border-teal-200 transition-colors duration-200 group/item"
+                    className="font-mono text-xs text-slate-700 bg-white border border-slate-200/50 px-3 py-1.5 rounded-xl hover:border-teal-400 hover:text-teal-600 transition-all duration-200 cursor-default select-none shadow-sm"
                   >
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-teal-600 opacity-60 group-hover/item:opacity-100 transition-opacity" />
-                      <span className="font-mono text-sm text-slate-700 font-medium group-hover/item:text-slate-900 transition-colors">
-                        {skill.name}
-                      </span>
-                    </div>
-                    <span className="font-mono text-[10px] uppercase font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded border border-slate-100">
-                      {skill.level}
-                    </span>
-                  </div>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>

@@ -65,15 +65,15 @@ export const Contact: React.FC = () => {
               </span>
             </div>
 
-            {/* Details List */}
+             {/* Details List */}
             <div className="space-y-4 font-mono text-xs">
-              <a href="mailto:2300080336aidselge@gmail.com" className="flex items-center gap-3.5 bg-white border border-slate-200/50 p-4 rounded-xl hover:border-teal-300 transition-colors group">
+              <a href="mailto:harikaustav@gmail.com" className="flex items-center gap-3.5 bg-white border border-slate-200/50 p-4 rounded-xl hover:border-teal-300 transition-colors group">
                 <div className="p-2.5 bg-slate-50 border border-slate-200 text-slate-500 rounded-lg group-hover:bg-teal-550 group-hover:text-teal-600 transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
                   <div className="text-slate-400 font-bold uppercase tracking-wider text-[10px]">Email</div>
-                  <div className="text-slate-700 font-semibold font-sans text-sm mt-0.5">2300080336aidselge@gmail.com</div>
+                  <div className="text-slate-700 font-semibold font-sans text-sm mt-0.5">harikaustav@gmail.com</div>
                 </div>
               </a>
 
@@ -243,7 +243,7 @@ export const Contact: React.FC = () => {
                   Core Strengths
                 </h4>
                 <div className="flex flex-wrap gap-1.5">
-                  {['Hard-working', 'Detail-oriented', 'Leadership', 'Teamwork', 'Time Management'].map((str) => (
+                  {['Hard-working', 'Detail-oriented', 'Leadership', 'Teamwork', 'Time Management', 'Problem-solving'].map((str) => (
                     <span key={str} className="font-mono text-[10px] font-semibold bg-white border border-slate-200 text-slate-600 px-2.5 py-1 rounded-full">
                       {str}
                     </span>

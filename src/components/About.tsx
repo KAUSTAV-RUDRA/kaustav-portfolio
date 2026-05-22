@@ -66,16 +66,22 @@ export const About: React.FC = () => {
 
   const timelineItems = [
     {
-      inst: 'KL University',
+      inst: 'KL University, Vijayawada',
       degree: 'B.Tech in Artificial Intelligence & Data Science',
-      period: '2022 - 2026 (Final Year)',
-      desc: 'Specializing in neural architectures, Natural Language Processing, computer vision model tuning, and statistics.'
+      period: '2023 - 2027',
+      desc: 'Cumulative GPA: 9.33 / 10. Focus on neural networks, Natural Language Processing, computer vision models, and full-stack web applications.'
     },
     {
-      inst: 'JPMorgan Chase & Co.',
-      degree: 'Software Engineering Virtual Experience',
-      period: '2025',
-      desc: 'Participated in Code for Good Hackathon 2025. Collaborated on web interfaces and data pipeline optimization.'
+      inst: 'Apeejay International School, Uttar Pradesh',
+      degree: '12th Standard (CBSE, PCM)',
+      period: '2021 - 2023',
+      desc: 'Completed higher secondary education under CBSE board.'
+    },
+    {
+      inst: 'Apeejay International School, Uttar Pradesh',
+      degree: '10th Standard (CBSE)',
+      period: '2021',
+      desc: 'Completed secondary school certification.'
     }
   ];
 
@@ -105,10 +111,10 @@ export const About: React.FC = () => {
                 My Tech Journey
               </h3>
               <p>
-                I am a final-year engineering student in <strong>Artificial Intelligence & Data Science</strong>, actively working at the intersection of deep learning modeling and web systems. I engineer full-stack platforms with modern technologies (MERN) and feed them with intelligent analytics to make products that solve practical, human challenges.
+                I am a final-year Artificial Intelligence & Data Science student at KL University with a Cumulative GPA of 9.33/10. I have hands-on experience building NLP pipelines, computer vision models, and full-stack web applications from end to end.
               </p>
               <p>
-                From deploying image models for grain quality assessment to engineering safe navigation tracking apps for kids, I aim to write production-grade code that is clean, secure, and ready to scale. I enjoy finding optimization opportunities in database interactions, API latencies, and machine learning inference speeds.
+                As a participant in JPMorgan Code for Good 2025 and a Top 0.6% finalist at the NextGen Hackathon 2025, I thrive in high-pressure team settings and bring a rigorous, systems-oriented mindset to every engineering challenge I encounter.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                 <div className="flex gap-2.5 items-start">
@@ -196,7 +202,7 @@ export const About: React.FC = () => {
                     </div>
                     <div className="text-right">
                       <div>COMPLETED SEMESTERS</div>
-                      <div className="font-bold text-white text-sm">7 / 8</div>
+                      <div className="font-bold text-white text-sm">6 / 8</div>
                     </div>
                   </div>
                 </div>
@@ -207,7 +213,7 @@ export const About: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm text-center">
                 <div className="font-display text-3xl font-extrabold text-teal-600">
-                  <AnimatedNumber value={12} suffix="+" />
+                  <AnimatedNumber value={6} />
                 </div>
                 <div className="font-mono text-xs text-slate-500 uppercase mt-1">Projects Built</div>
               </div>
@@ -230,7 +236,7 @@ export const About: React.FC = () => {
                 <div className="font-display text-3xl font-extrabold text-teal-600">
                   <AnimatedNumber value={2} />
                 </div>
-                <div className="font-mono text-xs text-slate-500 uppercase mt-1">Hackathon Wins</div>
+                <div className="font-mono text-xs text-slate-500 uppercase mt-1">Hackathons</div>
               </div>
             </div>
           </div>
