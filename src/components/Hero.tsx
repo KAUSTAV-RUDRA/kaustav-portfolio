@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
 
           {/* Brief Bio Intro */}
           <motion.p variants={itemVariants} className="text-slate-600 text-base md:text-lg max-w-xl font-sans leading-relaxed">
-            JPMorgan Code for Good 2025 participant and Top 0.6% finalist (among 3,900+ teams) at NextGen Hackathon 2025. Final-year AI & Data Science engineer at KL University (CGPA: 9.33/10) with hands-on experience building NLP pipelines, computer vision models, and full-stack web applications end-to-end. Thrives in high-pressure environments and brings a systems mindset to every problem.
+            Final-year B.Tech AI & Data Science student at KL University (CGPA: 9.33/10). Selected for JPMorgan Code for Good 2025 and ranked Top 0.6% among 3,900+ teams at NextGen Hackathon 2025 with SafeChild AI. Builds production-ready NLP pipelines, computer vision models, and full-stack web apps — seeking a Summer 2026 internship where engineering and AI intersect.
           </motion.p>
 
           {/* CTAs */}

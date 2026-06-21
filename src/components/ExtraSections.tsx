@@ -19,9 +19,9 @@ export const ExtraSections: React.FC = () => {
   ];
 
   const currentFocus = [
-    { name: 'LLM Fine-Tuning', desc: 'Experimenting with parameter-efficient fine-tuning (PEFT/LoRA) on open weights.' },
-    { name: 'Distributed Systems', desc: 'Understanding database sharding patterns, message queues, and load balancing.' },
-    { name: 'Vector Databases', desc: 'Integrating FAISS and Pinecone indices for RAG text extraction.' }
+    { name: 'LLM Fine-Tuning', desc: 'Experimenting with parameter-efficient fine-tuning (PEFT/LoRA) on open-weight models to build domain-specific AI assistants.' },
+    { name: 'System Design', desc: 'Studying scalable architecture patterns — database sharding, message queues, and API rate limiting for production-grade systems.' },
+    { name: 'RAG & Vector DBs', desc: 'Building retrieval-augmented generation pipelines using FAISS for semantic search over large document corpora.' }
   ];
 
   return (
