@@ -143,7 +143,7 @@ export const Contact: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  placeholder="John Doe"
+                  placeholder="Your name"
                   className="w-full bg-slate-50/50 border border-slate-200 focus:border-teal-500 focus:bg-white rounded-xl px-4 py-3 font-sans text-sm text-slate-800 focus:outline-none transition-colors"
                 />
               </div>
@@ -158,7 +158,7 @@ export const Contact: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="john@example.com"
+                  placeholder="Your email"
                   className="w-full bg-slate-50/50 border border-slate-200 focus:border-teal-500 focus:bg-white rounded-xl px-4 py-3 font-sans text-sm text-slate-800 focus:outline-none transition-colors"
                 />
               </div>
@@ -173,7 +173,7 @@ export const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  placeholder="Describe your project, timeline, and goals..."
+                  placeholder="Your message..."
                   className="w-full bg-slate-50/50 border border-slate-200 focus:border-teal-500 focus:bg-white rounded-xl px-4 py-3 font-sans text-sm text-slate-800 focus:outline-none transition-colors resize-none"
                 />
               </div>
