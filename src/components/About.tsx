@@ -114,7 +114,7 @@ export const About: React.FC = () => {
                 I am a final-year Artificial Intelligence & Data Science student at KL University with a Cumulative GPA of 9.33/10. I have hands-on experience building NLP pipelines, computer vision models, and full-stack web applications from end to end.
               </p>
               <p>
-                As a participant in JPMorgan Code for Good 2025 and a Top 0.6% finalist at the NextGen Hackathon 2025, I thrive in high-pressure team settings and bring a rigorous, systems-oriented mindset to every engineering challenge I encounter.
+                As a selected participant in JPMorgan Code for Good 2025 and a Top 0.6% finalist at the NextGen Hackathon 2025 with SafeChild AI, I thrive in high-pressure team settings and bring a rigorous, systems-oriented mindset to every engineering challenge I encounter.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                 <div className="flex gap-2.5 items-start">
@@ -197,8 +197,8 @@ export const About: React.FC = () => {
 
                   <div className="border-t border-white/20 pt-4 flex justify-between text-xs font-mono text-teal-100">
                     <div>
-                      <div>UNIVERSITY RANK</div>
-                      <div className="font-bold text-white text-sm">TOP 5%</div>
+                      <div>DEGREE</div>
+                      <div className="font-bold text-white text-sm">B.TECH AI & DS</div>
                     </div>
                     <div className="text-right">
                       <div>COMPLETED SEMESTERS</div>
@@ -220,13 +220,6 @@ export const About: React.FC = () => {
               
               <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm text-center">
                 <div className="font-display text-3xl font-extrabold text-teal-600">
-                  <AnimatedNumber value={450} suffix="+" />
-                </div>
-                <div className="font-mono text-xs text-slate-500 uppercase mt-1">LeetCode Solved</div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm text-center">
-                <div className="font-display text-3xl font-extrabold text-teal-600">
                   <AnimatedNumber value={5} />
                 </div>
                 <div className="font-mono text-xs text-slate-500 uppercase mt-1">Certifications</div>
@@ -237,6 +230,13 @@ export const About: React.FC = () => {
                   <AnimatedNumber value={2} />
                 </div>
                 <div className="font-mono text-xs text-slate-500 uppercase mt-1">Hackathons</div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm text-center">
+                <div className="font-display text-3xl font-extrabold text-teal-600">
+                  <AnimatedNumber value={3} />
+                </div>
+                <div className="font-mono text-xs text-slate-500 uppercase mt-1">Years at KL Univ</div>
               </div>
             </div>
           </div>

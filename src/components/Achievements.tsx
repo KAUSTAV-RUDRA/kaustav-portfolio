@@ -35,19 +35,18 @@ export const Achievements: React.FC = () => {
       date: '2025',
       icon: <Award className="w-5 h-5 text-teal-600" />,
       bullets: [
-        'Led a 3-member team to design and deploy an image-based cultivar classification prototype.',
-        'Engineered light, optimized convolutional networks running at fast edge speeds.',
+        'Led a 3-member team to build SafeChild AI — a multimodal child protection platform.',
+        'Implemented NLP text classification, speech-to-text pipelines, and computer vision image scanners.',
         'Recognized in the top 0.6% of submissions nationally for technical innovation and prototype viability.'
       ]
     },
     {
-      title: 'Competitive Coding Achievements',
-      subtitle: 'LeetCode & CodeChef Benchmarks',
+      title: 'Competitive Coding',
+      subtitle: 'HackerRank & Coding Platforms',
       date: 'Active',
       icon: <Code2 className="w-5 h-5 text-sky-600" />,
       bullets: [
-        'Solved 450+ algorithmic challenges on LeetCode focusing on Dynamic Programming, Graphs, and Data Structures.',
-        'Maintained a top 8% profile ranking in weekly competition metrics on LeetCode.',
+        'Active on LeetCode, CodeChef, and Codeforces practicing Data Structures and Algorithms.',
         'Earned golden badges in Python, Problem Solving, and Database systems on HackerRank.'
       ],
       links: [
@@ -61,9 +60,8 @@ export const Achievements: React.FC = () => {
       date: '2023 - Present',
       icon: <BookOpen className="w-5 h-5 text-teal-600" />,
       bullets: [
-        'Maintained a CGPA of 9.33 / 10.0, placing in the top 5% of the engineering class.',
-        'Awarded merit-based scholarship certificates for outstanding performance.',
-        'Completed specialized projects in NLP parsing and system design patterns.'
+        'Maintained a CGPA of 9.33 / 10.0 across 6 completed semesters.',
+        'Completed specialized projects in NLP pipelines, computer vision, and full-stack web applications.'
       ]
     }
   ];
